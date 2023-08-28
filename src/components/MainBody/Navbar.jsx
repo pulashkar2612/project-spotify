@@ -38,6 +38,10 @@ function Navbar() {
         }
     }, [location]);
 
+    const handleMenu =  (item) => {
+        const link = item.toLowerCase();
+        Navigate()
+    }
     const handleOpenUserMenu = (e) => {
         setAnchorElUser(e.currentTarget);
     }
@@ -126,7 +130,7 @@ function Navbar() {
                     >
                         {settings.map((item) => (
                             <MenuItem key={item} onClick={handleCloseUserMenu}>
-                                <Typography textAlign="center">{item}</Typography>
+                                <Typography textAlign="center"><a href={`/${item.toLowerCase()}`}>{item}</a></Typography>
                             </MenuItem>
                         ))}
                     </Menu>
